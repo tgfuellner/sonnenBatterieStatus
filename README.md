@@ -1,0 +1,1 @@
+# sonnenBatterieStatus
