@@ -10,7 +10,7 @@ r = requests.get(url)
 stateAll = r.json()
 
 state = OrderedDict()
-state['SOC'] = stateAll['USOC']
+state['SOC'] = str(stateAll['USOC'])+'%'
 state['Production'] = str(stateAll['Production_W'])+'W'
 state['Consumption'] = str(stateAll['Consumption_W'])+'W'
 state['GridFeedIn'] = str(stateAll['GridFeedIn_W'])+'W'
