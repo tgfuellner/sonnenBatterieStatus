@@ -17,7 +17,7 @@ state['GridFeedIn'] = str(stateAll['GridFeedIn_W'])+'W'
 state['Timestamp'] = stateAll['Timestamp']
 
 
-print("""<!DOCTYPE html>
+print("""
 <html>
 <head>
 <style>
