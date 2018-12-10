@@ -15,6 +15,7 @@ def makeTable(environ, start_response):
     state['SOC'] = str(stateAll['USOC'])+'%'
     state['Production'] = str(stateAll['Production_W'])+'W'
     state['Consumption'] = str(stateAll['Consumption_W'])+'W'
+    state['Battery'] = str(stateAll['Pac_total_W'])+'W'
     state['GridFeedIn'] = str(stateAll['GridFeedIn_W'])+'W'
     state['Timestamp'] = stateAll['Timestamp']
 
