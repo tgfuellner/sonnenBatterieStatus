@@ -24,6 +24,17 @@ def makeTable(environ, start_response):
 
     start_response('200 OK', [('Content-Type', 'text/html')])
 
+    if stateAll['GridFeedIn_W'] < -200:
+        color = b'Red'
+    elif stateAll['Pac_total_W'] > 50:
+        color = b'Orange'
+    elif stateAll['Pac_total_W'] < -50:
+        color = b'green'
+    elif stateAll['GridFeedIn_W'] > 200:
+        color = b'DarkGreen'
+    else:
+        color = b'SkyBlue'
+
     return [b"""
     <html>
     <head>
@@ -40,12 +51,12 @@ def makeTable(environ, start_response):
     tr:nth-child(even) {background-color: #f2f2f2;}
     </style>
     </head>
-    <body>
+    <body bgcolor="%(bgcolor)s">
 
     %(table)s
 
     </body>
-    </html>""" % {b"table": state.encode('utf-8')}]
+    </html>""" % {b"table": state.encode('utf-8'), b"bgcolor": color}]
 
 
 
